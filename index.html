@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List حرفه‌ای</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <div class="todo-container">
+        <h1 class="text-center mb-4">To-Do List من</h1>
+        <div class="input-group mb-3">
+            <input type="text" id="todo-input" class="form-control" placeholder="چیزی بنویسید...">
+            <button class="btn btn-primary" onclick="addTodo()">اضافه کردن</button>
+        </div>
+        <ul id="todo-list" class="list-group"></ul>
+        <button class="btn btn-success mt-3" onclick="downloadExcel()">دانلود فایل Excel</button>
+    </div>
+
+    <!-- پاپ‌آپ حذف -->
+    <div id="delete-popup" class="popup">
+        <div class="popup-content">
+            <p>مطمئنی می‌خوای این کار رو حذف کنی؟</p>
+            <button class="btn btn-danger" onclick="confirmDelete()">بله، حذف کن</button>
+            <button class="btn btn-secondary" onclick="closeDeletePopup()">نه، انصراف</button>
+        </div>
+    </div>
+
+    <!-- پاپ‌آپ ویرایش -->
+    <div id="edit-popup" class="popup">
+        <div class="popup-content">
+            <p>متن جدید را وارد کنید:</p>
+            <input type="text" id="edit-input" class="form-control mb-3">
+            <button class="btn btn-success" onclick="confirmEdit()">تایید</button>
+            <button class="btn btn-secondary" onclick="closeEditPopup()">بازگشت</button>
+        </div>
+    </div>
+
+    <!-- کتابخانه SheetJS برای کار با Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script src="/script/script.js"></script>
+    <script src="/script/background.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+  }
+  
+  #background-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  }
+  
+  .todo-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2c3e50;
+  }
+  
+  .input-group {
+      margin-bottom: 20px;
+  }
+  
+  .list-group-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ecf0f1;
+      border: none;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      padding: 10px 15px;
+      color: #2c3e50;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-group-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .todo-text {
+      flex-grow: 1;
+      margin-right: 10px;
+  }
+  
+  .todo-time {
+      font-size: 0.9rem;
+      color: #7f8c8d;
+      margin-right: 10px;
+  }
+  
+  .btn-group button {
+      margin-left: 5px;
+  }
+  
+  .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+  }
+  
+  .popup-content {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      animation: popupFadeIn 0.3s ease;
+  }
+  
+  @keyframes popupFadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+  }
